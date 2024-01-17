@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <style>
+        * {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-image: url("images/background.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            min-height: 100vh;
+            /* Ensure background fills the entire height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+        }
+
+
+        .title-box {
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(90, 166, 172, 0.856);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+        }
+
+        .title-box h1,
+        .title-box p {
+            color: white;
+        }
+
+        .title-box h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .title-box p {
+            font-size: 18px;
+        }
+
+        #about .nav-item {
+            font-weight: 900;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .title-box {
+                margin: 20px auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" class="style">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler hidden-lg-up" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation"></button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item" id="about">
+                        <a class="nav-link" href="AboutUs.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Group Members Row -->
+        <div class="row">
+            <div class="col-md-4 text-left">
+                <h2>Group Members</h2>
+            </div>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="container mt-5">
+            <div class="row justify-content-center align-items-center">
+                <!-- First Column -->
+                <div class="col-md-4">
+                    <div class="card mb-3" style="width: 75%">
+                        <img src="images/abuzhar.png" class="card-img-top" alt="Image 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Abu Zharr Luqman Bin Abdul Aziz</h5>
+                            <p class="card-text">2011733</p>
+                            <h6 class="card-subtitle mb-2 text-muted">Smart Contract Developer</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Column -->
+                <div class="col-md-4">
+                    <div class="card mb-3" style="width: 75%">
+                        <img src="images/aiman.png" class="card-img-top" alt="Image 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Muhammad Aiman Bin Mat Isa</h5>
+                            <p>2014243</p>
+                            <h12 class="card-subtitle">Front-End Developer</h12>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Column -->
+                <div class="col-md-4">
+                    <div class="card mb-3" style="width: 75%">
+                        <img src="images/afiq.png" class="card-img-top" alt="Image 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Muhammad Afiq Bin Kharul Azman</h5>
+                            <p>2011595</p>
+                            <h12 class="card-subtitle">Back-End Developer</h12>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="text-center bg-transparent text-white p-3" style="position: fixed; bottom: 0; width: 100%">
+        Copyright © 2024 Davote
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js (optional, for Bootstrap components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

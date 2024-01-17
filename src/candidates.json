@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "name": "ABU ZHAR",
+    "picture": "images/abuzhar.png",
+    "age": 23,
+    "course": "Barchelor of Information Technology"
+   
+   
+  },
+  {
+    "id": 1,
+    "name": "AIMAN ISA",
+    "picture": "images/aiman.png",
+    "age": 23,
+    "course": "Barchelor of Computer Science"
+    
+  },
+  {
+    "id": 2,
+    "name": "AFIQ ",
+    "picture": "images/afiq.png",
+     "age": 23,
+    "course": "Barchelor of Computer Science"
+    
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "id": 0,
+    "name": "Abu Zhar",
+    "picture": "images/abuzhar.jpg",
+    "age": 23,
+    "breed": "Terenggannu",
+    "location": "Pakistan"
+  },
+  {
+    "id": 1,
+    "name": "Luqman",
+    "picture": "images/abuzhar.jpg",
+    "age": 23,
+    "breed": "Terenggannu"
+  },
+  {
+    "id": 2,
+    "name": "Luqman",
+    "picture": "images/abuzhar.jpg",
+    "age": 23,
+    "breed": "Terenggannu"
+  }
+  
+]
