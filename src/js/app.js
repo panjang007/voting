@@ -16,9 +16,7 @@ App = {
         candidateTemplate.find(".btn-adopt").attr("data-id", data[i].id);
         candidateTemplate
           .find(".candidate-vote-count")
-          .html(
-            'Votes: <span class="candidate-' + data[i].id + '-votes">0</span>'
-          );
+          .html('<span class="candidate-' + data[i].id + '-votes">0</span>');
 
         petsRow.append(candidateTemplate.html());
       }
