@@ -8,14 +8,17 @@ App = {
       var petsRow = $("#petsRow");
       var candidateTemplate = $("#candidateTemplate");
 
-      //create new object kat website
-      for (i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.length; i++) {
         candidateTemplate.find(".panel-title").text(data[i].name);
         candidateTemplate.find("img").attr("src", data[i].picture);
         candidateTemplate.find(".candidate-course").text(data[i].course);
         candidateTemplate.find(".candidate-age").text(data[i].age);
-
         candidateTemplate.find(".btn-adopt").attr("data-id", data[i].id);
+        candidateTemplate
+          .find(".candidate-vote-count")
+          .html(
+            'Votes: <span class="candidate-' + data[i].id + '-votes">0</span>'
+          );
 
         petsRow.append(candidateTemplate.html());
       }
@@ -53,7 +56,7 @@ App = {
 
   initContract: function () {
     $.getJSON("Voting.json", function (data) {
-      // Get the necessary contract artifact file and instantiate it with @truffle/contract
+      // Get the necessary contract artifact file and instantiate it with truffle-contract
       var VotingArtifact = data;
       App.contracts.Voting = TruffleContract(VotingArtifact);
 
@@ -88,12 +91,14 @@ App = {
 
           var account = accounts[0];
 
-          for (i = 0; i < voters.length; i++) {
+          for (let i = 0; i < voters.length; i++) {
             if (voters[i] === account) {
-              $(".btn-adopt").text("Voted").attr("disabled", true);
-              break;
+              $('.btn-adopt[data-id="' + i + '"]')
+                .text("Voted")
+                .attr("disabled", true);
             }
           }
+          App.updateVoteCounts();
         });
       })
       .catch(function (err) {
@@ -119,15 +124,6 @@ App = {
         .then(function (instance) {
           votingInstance = instance;
 
-          // Check if the account has already voted
-          return votingInstance.voters(petId);
-        })
-        .then(function (votedAddress) {
-          if (votedAddress === account) {
-            alert("You have already voted.");
-            return;
-          }
-
           // Execute vote as a transaction by sending account
           return votingInstance.vote(petId, { from: account });
         })
@@ -138,6 +134,30 @@ App = {
           console.log(err.message);
         });
     });
+  },
+
+  updateVoteCounts: function () {
+    var votingInstance;
+
+    App.contracts.Voting.deployed()
+      .then(function (instance) {
+        votingInstance = instance;
+
+        // replace the numbers of candidate
+        for (let i = 0; i < 16; i++) {
+          votingInstance
+            .getVotes(i)
+            .then(function (votes) {
+              $(".candidate-" + i + "-votes").text(votes.toString());
+            })
+            .catch(function (err) {
+              console.log(err.message);
+            });
+        }
+      })
+      .catch(function (err) {
+        console.log(err.message);
+      });
   },
 };
 
